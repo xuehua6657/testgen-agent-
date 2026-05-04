@@ -1,0 +1,26 @@
+llm:
+  model: gpt-4o
+  temperature: 0.2
+  max_tokens: 4096
+  timeout: 120
+
+agent:
+  max_iterations: 3
+  max_tests_per_file: 10
+  min_confidence_score: 0.7
+  include_docstrings: true
+  include_type_hints: true
+
+ci:
+  provider: github_actions
+  output_dir: .testgen
+  auto_commit: false
+  pr_comment: true
+
+target_language: python
+test_framework: pytest
+source_dirs:
+  - src
+  - examples
+test_dirs:
+  - tests
